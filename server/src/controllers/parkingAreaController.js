@@ -6,7 +6,7 @@ const ParkingAreas = mongoose.model('ParkingArea');
 module.exports.getAllParkingAreas =(req, res, next) =>{
     ParkingAreas.find((err, docs) => {
         if(err) 
-            return res.status(404).json({status: false, message: 'ParkingAreas not found'});
+            return res.status(404).json({status: false, message: 'Parking Areas not found'});
         else 
             return res.status(200).json(docs);
     })
@@ -17,11 +17,11 @@ module.exports.getSingleParkingArea =(req, res, next) =>{
         if(!err)
             return res.status(200).json(doc);
         else 
-            return res.status(404).json({status: false, message: 'ParkingArea not found'});
+            return res.status(404).json({status: false, message: 'Parking Area not found'});
     });
 }
 else
-    return res.status(400).send('No student found with that id :' + req.params.id );
+    return res.status(400).send('No Parking Area found with that id :' + req.params.id );
 }
 module.exports.postParkingArea = (req, res, next)=> {
     let parkingArea = new ParkingAreas();
