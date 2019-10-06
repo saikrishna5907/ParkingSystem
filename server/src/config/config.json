@@ -1,6 +1,6 @@
 {
     "development":{
-        "PORT": 5000,
+        "PORT": 5001,
         "MONGODB_URI": "mongodb://localhost:27017/ParkingSystem",
         "JWT_SECRET": "SECRET#5907",
         "JWT_EXP": "20m"

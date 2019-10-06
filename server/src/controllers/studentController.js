@@ -31,11 +31,12 @@ module.exports.getSingleStudent = (req,res,next) => {
 // to create a new student record
 module.exports.postStudent = (req, res, next) => {
     let student  = new Students();
-    student.name = req.body.name;
-    student.studentID = req.body.studentID;    
-    student.email = req.body.email;
+    student.firstName = req.body.firstName;
+    student.lastName = req.body.lastName;
+    student.studentId = req.body.studentId;    
+    student.emailId = req.body.emailId;
     student.carRego = req.body.carRego;
-    student.contactNumber = req.body.contactNumber;
+    student.phone = req.body.phone;
     student.save((err,docs) => {
        if (!err) {
            res.send(docs);

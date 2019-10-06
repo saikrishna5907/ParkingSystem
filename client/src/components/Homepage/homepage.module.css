@@ -1,0 +1,23 @@
+.jumbotronStyle{
+    text-align: center;
+    margin: auto;
+    width: 80%;
+    background-color: rgba(230, 239, 240, 0.445);
+  }
+  .descriptionP{
+    text-align: left;
+    font-size: 22px;
+  }
+  .descriptionDivStyle{
+    text-align: center;
+  }
+  .lifecycleContainer{
+    text-align: center;
+    align-content: center;
+    transform: translate(10%);
+    margin: auto;
+    width: 80%;
+    margin-top: 30px;
+    height: auto;
+    /* background-image: linear-gradient(150deg, #22242286 0%, #97be9783 51%,   #324e37 75%); */
+}

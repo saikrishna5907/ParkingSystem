@@ -1,15 +1,19 @@
 import mongoose from 'mongoose';
 
 const studentSchema = new mongoose.Schema({
-    name: {
+    firstName: {
         type: String,
-        required: 'Student Name is required'
+        required: 'Student First Name is required'
     },
-    studentID: {
+    lastName: {
+        type: String,
+        required: 'Student Last Name is required'
+    },
+    studentId: {
         type: Number,
         required: 'Student number is required'
     },
-    email: {
+    emailId: {
         type: String,
         required: 'Student email is required',
         unique: true
@@ -18,15 +22,9 @@ const studentSchema = new mongoose.Schema({
         type: String,
         required: 'Student Car Rego is required'
     },
-    contactNumber: {
+    phone: {
         type: Number,
         required: 'Contact Number is required'
     }
 });
 mongoose.model('Student', studentSchema);
-
-//methods
-studentSchema.path('email').validate((val) => {
-    regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return regex.test(val);
-}, 'Invalid e-mail.');

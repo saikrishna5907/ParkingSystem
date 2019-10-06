@@ -11,6 +11,17 @@ module.exports.getAllParkingSpots =(req, res, next) =>{
             return res.status(200).json(docs);
     })
 } 
+module.exports.getAllSpotsForAParticularArea = (req, res, next) => {
+    ParkingSpots.find({parkingSpotAreaName: req.params.name}, (err,docs) => {
+        console.log(req.params.name);
+        if(!err){
+            return res.status(200).json(docs);
+        }
+        else {
+            return res.status(404).json({status: false, message: 'Parking Spot not found in This Area'});   
+        }
+    });
+}
 module.exports.getSingleParkingSpot =(req, res, next) =>{
   if(ObjectId.isValid(req.params.id)){
     ParkingSpots.findById(req.params.id, (err,doc) => {
@@ -25,7 +36,7 @@ else
 }
 module.exports.postParkingSpot = (req, res, next)=> {
     let parkingSpot = new ParkingSpots();
-    parkingSpot.parkingSpotAreaId = req.body.parkingSpotAreaId, 
+    parkingSpot.parkingSpotAreaName = req.body.parkingSpotAreaName, 
     parkingSpot.allowedParkingTimeInMins = req.body.allowedParkingTimeInMins;
     parkingSpot.location = req.body.location;
     parkingSpot.sensorId = req.body.sensorId;

@@ -11,6 +11,16 @@ module.exports.getAllParkingAreas =(req, res, next) =>{
             return res.status(200).json(docs);
     })
 } 
+module.exports.getAreaByAreaName = (req, res, next) => {
+    ParkingAreas.find({name: req.params.name}, (err,docs) => {
+        if(!err){
+            return res.status(200).json(docs);
+        }
+        else {
+            return res.status(404).json({status: false, message: 'Parking Area not found with this area name'});   
+        }
+    });
+}
 module.exports.getSingleParkingArea =(req, res, next) =>{
   if(ObjectId.isValid(req.params.id)){
     ParkingAreas.findById(req.params.id, (err,doc) => {

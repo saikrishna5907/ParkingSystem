@@ -1,0 +1,9 @@
+.spotsSvg{
+    /* fill:rgb(112, 231, 0); */
+    stroke:rgb(0,0,0);
+    stroke-width:5;
+    opacity:0.5
+    }
+    .svgStyle{
+        transform: translate(5%)
+    }
