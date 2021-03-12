@@ -52,7 +52,7 @@
     "react-app-polyfill": "^1.0.4",
     "react-blur": "^0.6.0",
     "react-bootstrap": "^1.0.0-beta.14",
-    "react-dev-utils": "^9.1.0",
+    "react-dev-utils": "^11.0.4",
     "react-dom": "^16.10.2",
     "react-fusioncharts": "^3.0.1",
     "react-owl-carousel2": "^0.3.0",
